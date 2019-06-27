@@ -1,5 +1,3 @@
-<div align=center><img src='./_media/棒冰.png' /></div>
-
 # ICE CREAM
 - 《集体智慧编程》学习笔记，代号 `ice-cream` 🍦
 - 《Programming Collective Intelligence》 **notebook**
