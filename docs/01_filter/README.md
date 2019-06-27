@@ -1,3 +1,16 @@
+## 相似度评价值
+
+- **欧几里得距离**
+    - 指多维空间中两点间的距离
+    - 适用于数据较为**规范**的时候
+    - 计算两个用户之间的**距离**
+    - 对距离进行 + 1 并求其**倒数**
+    - 计算公式 
+```tex
+\sqrt{(p_1-q_1)^2+(p_2-q_2)^2+...+(p_n-q_n)^2} = \sqrt{\sum_{i=1}^{n}(p_i-q_i)^2}
+```
+
+```python
 # 欧几里得距离的实现
 from math import sqrt
 
@@ -11,6 +24,16 @@ def sim_distance(prefs, person1, person2):
     return 1 / (1 + sqrt(sum_of_squares))
 ```
 
+- **皮尔逊相关系数**
+    - 度量两个变量间相关程度的方法
+    - 在数据**不规范**的时有更好的表现
+    - 了解变量的总体变化情况
+    - 计算公式 
+```tex
+r = {\sum XY - \sum{X} \sum {Y} \over N} \over \sqrt{\left( \sum {X^2} - (\sum X)^2\over N  \right)- \left( \sum {Y^2} - (\sum Y)^2\over N  \right)}
+```
+
+```python
 # 皮尔逊相关度实现
 def sim_persom(prefs, p1, p2):
     si ={}
@@ -31,3 +54,4 @@ def sim_persom(prefs, p1, p2):
     if den == 0 : return 0
     r = num / den
     return r
+```
